@@ -4,10 +4,9 @@ defmodule Mirage.MixProject do
   def project do
     [
       app: :mirage,
-      compilers: [:rustler] ++ Mix.compilers(),
+      compilers: Mix.compilers(),
       deps: deps(),
       elixir: "~> 1.7",
-      rustler_crates: [mirage: []],
       start_permanent: Mix.env() == :prod,
       version: "0.1.0"
     ]
@@ -21,7 +20,7 @@ defmodule Mirage.MixProject do
 
   defp deps do
     [
-      {:rustler, "~> 0.22-rc"}
+      {:rustler, "~> 0.22"}
     ]
   end
 end
